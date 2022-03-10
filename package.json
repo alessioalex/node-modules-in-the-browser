@@ -1,0 +1,22 @@
+{
+  "name": "test-bfy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "elliptic": "^6.5.4",
+    "js-sha3": "^0.8.0"
+  },
+  "devDependencies": {
+    "rimraf": "3.0.2",
+    "serve": "13.0.2"
+  },
+  "scripts": {
+    "build": "browserify -r elliptic -r js-sha3 > public/bundle.js",
+    "start": "rimraf public/bundle.js && npm run build && serve -p 9090 public/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
